@@ -5,7 +5,6 @@ import SalesChart from './SalesChart';
 import AccountGraph from './AccountGraph';
 import Earning from './Earning';
 import Gauge from './Gauge';
-import InfluxChart from './InfluxChart';
 
 const Dashboard = () => {
   return (
@@ -24,8 +23,7 @@ const Dashboard = () => {
           <Earning />
         </Grid>
         <Grid item xs={12} md={7}>
-          {/* <Gauge /> */}
-          <InfluxChart />
+          <Gauge />
         </Grid>
       </AppGridContainer>
     </>
