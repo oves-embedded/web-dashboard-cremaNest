@@ -98,7 +98,7 @@ const UserInfo = ({color}) => {
               }}
               component='span'
             >
-              {user.displayName ? user.displayName : 'Admin User '}
+              Admin User
             </Box>
             <Box
               sx={{
@@ -118,7 +118,7 @@ const UserInfo = ({color}) => {
               color: 'inherit',
             }}
           >
-            System Manager
+            Admin
           </Box>
         </Box>
       </Box>

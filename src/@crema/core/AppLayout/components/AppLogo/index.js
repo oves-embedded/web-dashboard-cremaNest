@@ -2,8 +2,9 @@ import React from 'react';
 import {useThemeContext} from '../../../../utility/AppContextProvider/ThemeContextProvider';
 import PropTypes from 'prop-types';
 import {alpha, Box} from '@mui/material';
+// import Logo from '../../../../../assets/icon/logo.svg';
 import Logo from '../../../../../assets/icon/logo.svg';
-import LogoText from '../../../../../assets/icon/logo_text.svg';
+// import LogoText from '../../../../../assets/icon/logo_text.svg';
 
 const AppLogo = () => {
   const {theme} = useThemeContext();
@@ -24,7 +25,7 @@ const AppLogo = () => {
       }}
       className='app-logo'
     >
-      <Logo fill={theme.palette.primary.main} />
+      {/* <Logo fill={theme.palette.primary.main} /> */}
       <Box
         sx={{
           mt: 1,
@@ -33,7 +34,7 @@ const AppLogo = () => {
           },
         }}
       >
-        <LogoText fill={alpha(theme.palette.text.primary, 0.8)} />
+        {/* <LogoText fill={alpha(theme.palette.text.primary, 0.8)} /> */}
       </Box>
     </Box>
   );

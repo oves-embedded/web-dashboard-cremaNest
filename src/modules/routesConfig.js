@@ -1,5 +1,7 @@
+import React from 'react';
 import {BiAlignLeft} from 'react-icons/bi';
 
+// Configuring the routes of the sidebar
 const routesConfig = [
   {
     id: 'app',
@@ -8,12 +10,12 @@ const routesConfig = [
     type: 'group',
     children: [
       {
-        id: 'page-1',
-        title: 'Page 1',
-        messageId: 'sidebar.sample.page1',
+        id: 'dashboard',
+        title: 'Dashboard',
+        messageId: 'sidebar.app.dashboard',
         type: 'item',
         icon: <BiAlignLeft />,
-        url: '/sample/page-1',
+        url: '/dashboard/dashboard',
       },
       {
         id: 'page-2',
@@ -26,4 +28,5 @@ const routesConfig = [
     ],
   },
 ];
+
 export default routesConfig;
