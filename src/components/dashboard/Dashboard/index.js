@@ -12,23 +12,26 @@ const Page2 = () => {
   return (
     <>
       <AppPageMeta />
-      <AppGridContainer>
-        <Grid item xs={12} md={4}>
-          {/** Stacked Area Chart */}
-          <SalesChart />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          {/** Stacked Area Chart */}
-          <AccountGraph />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          {/** Stacked Area Chart */}
-          <Earning />
-        </Grid>
-        <Grid item xs={12} md={7}>
-          <Gauge />
-        </Grid>
-      </AppGridContainer>
+      <Box sx={{my: 2}}>
+        <AppGridContainer>
+          <h2>Sample Dashboard</h2>
+          <Grid item xs={12} md={4}>
+            {/** Stacked Area Chart */}
+            <SalesChart />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            {/** Stacked Area Chart */}
+            <AccountGraph />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            {/** Stacked Area Chart */}
+            <Earning />
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <Gauge />
+          </Grid>
+        </AppGridContainer>
+      </Box>
     </>
   );
 };
