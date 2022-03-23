@@ -13,9 +13,7 @@ const Dashboard = () => {
     <>
       <AppPageMeta />
       <h2>Dashboard</h2>
-      <Box sx={{my: 2}}>
-        <Earning />
-      </Box>
+      <Box sx={{my: 2}}>Dashboard</Box>
     </>
   );
 };
