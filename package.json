@@ -116,6 +116,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
+    "@next/eslint-plugin-next": "^12.1.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
     "babel-plugin-inline-react-svg": "^2.0.1",
