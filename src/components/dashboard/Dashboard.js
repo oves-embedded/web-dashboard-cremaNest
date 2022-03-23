@@ -5,7 +5,7 @@ import SalesChart from './SalesChart';
 import AccountGraph from './AccountGraph';
 import Earning from './Earning';
 import Gauge from './Gauge';
-import Box from '@mui/material';
+import {Box} from '@mui/material';
 import AppPageMeta from '../../@crema/core/AppPageMeta';
 
 const Dashboard = () => {
