@@ -1,14 +1,14 @@
 import React from 'react';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
-import SalesChart from '../SalesChart';
-import AccountGraph from '../AccountGraph';
-import Earning from '../Earning';
-import Gauge from '../Gauge';
+import SalesChart from './Sales/SalesChart';
+import AccountGraph from './Account/AccountGraph';
+import Earning from './Earning/Earning';
+import Gauge from './Gauge/Gauge';
 import {Box} from '@mui/material';
-import AppPageMeta from '../../../@crema/core/AppPageMeta';
+import AppPageMeta from '../../@crema/core/AppPageMeta';
 
-const Page2 = () => {
+const Dashboards = () => {
   return (
     <>
       <AppPageMeta />
@@ -36,4 +36,4 @@ const Page2 = () => {
   );
 };
 
-export default Page2;
+export default Dashboards;
