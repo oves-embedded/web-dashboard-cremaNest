@@ -6,16 +6,16 @@ import AccountGraph from './AccountGraph';
 import Earning from './Earning';
 import Gauge from './Gauge';
 import Box from '@mui/material';
+import AppPageMeta from '../../@crema/core/AppPageMeta';
 
 const Dashboard = () => {
   return (
     <>
-      <AppGridContainer>
-        <Grid item xs={12} md={4}>
-          {/** Stacked Area Chart */}
-          <Earning />
-        </Grid>
-      </AppGridContainer>
+      <AppPageMeta />
+      <h2>Dashboard</h2>
+      <Box sx={{my: 2}}>
+        <Earning />
+      </Box>
     </>
   );
 };
