@@ -68,7 +68,7 @@ const SalesChart = () => {
 
 export default SalesChart;
 
-SalesGraph.defaultProps = {
+SalesChart.defaultProps = {
   data: [
     {
       name: 'Group A',
@@ -89,6 +89,6 @@ SalesGraph.defaultProps = {
   ],
 };
 
-SalesGraph.propTypes = {
+SalesChart.propTypes = {
   data: checkPropTypes.array,
 };
