@@ -4,6 +4,6 @@ import asyncComponent from '../../@crema/utility/asyncComponent';
 // import Dashboard from '../../modules/dashboard/Dashboard';
 
 const Dashboard = asyncComponent(() =>
-  import('../../modules/dashboard/Dashboard'),
+  import('../../components/dashboard/Dashboard'),
 );
 export default AppPage(() => <Dashboard />);

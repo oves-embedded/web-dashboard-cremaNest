@@ -1,25 +1,7 @@
 import React from 'react';
 import {Cell, Legend, Pie, PieChart, ResponsiveContainer} from 'recharts';
 import AppCard from '@crema/core/AppCard';
-
-const data = [
-  {
-    name: 'Group A',
-    value: 400,
-  },
-  {
-    name: 'Group B',
-    value: 300,
-  },
-  {
-    name: 'Group C',
-    value: 300,
-  },
-  {
-    name: 'Group D',
-    value: 200,
-  },
-];
+import {checkPropTypes} from 'prop-types';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -85,3 +67,28 @@ const SalesChart = () => {
 };
 
 export default SalesChart;
+
+SalesGraph.defaultProps = {
+  data: [
+    {
+      name: 'Group A',
+      value: 400,
+    },
+    {
+      name: 'Group B',
+      value: 300,
+    },
+    {
+      name: 'Group C',
+      value: 300,
+    },
+    {
+      name: 'Group D',
+      value: 200,
+    },
+  ],
+};
+
+SalesGraph.propTypes = {
+  data: checkPropTypes.array,
+};

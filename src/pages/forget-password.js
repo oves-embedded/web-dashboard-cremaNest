@@ -3,6 +3,6 @@ import AppPage from '../@crema/hoc/DefaultPage/index';
 import asyncComponent from '../@crema/utility/asyncComponent';
 
 const ForgetPassword = asyncComponent(() =>
-  import('../modules/auth/ForgetPassword/index'),
+  import('../components/auth/ForgetPassword/index'),
 );
 export default AppPage(() => <ForgetPassword />);

@@ -4,7 +4,7 @@ import HorizontalCollapse from './HorizontalCollapse';
 import HorizontalItem from './HorizontalItem';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
-import routesConfig from '../../../../../modules/routesConfig';
+import routesConfig from '../../../../../components/routesConfig';
 
 const HorizontalNav = () => {
   return (

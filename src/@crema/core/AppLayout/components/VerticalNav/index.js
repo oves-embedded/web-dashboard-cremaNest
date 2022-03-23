@@ -1,7 +1,7 @@
 import React from 'react';
 import List from '@mui/material/List';
 
-import routesConfig from '../../../../../modules/routesConfig';
+import routesConfig from '../../../../../components/routesConfig';
 import NavVerticalGroup from './VerticalNavGroup';
 import VerticalCollapse from './VerticalCollapse';
 import VerticalItem from './VerticalItem';
