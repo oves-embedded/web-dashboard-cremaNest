@@ -12,11 +12,6 @@ import {
   Area,
 } from 'recharts';
 
-const APItoken =
-  'F_oWn6OdvzDl1tB-7XPZF5Jz8iXpD33YN9PcITyqQsF-qEHmQqKdcT6EB0viw7HiNMwW79UGNi_TItqVm2x7uQ==';
-const OrgName = 'Oves';
-const InfluxDBUrl = 'http://localhost:8086';
-
 let query = `from(bucket: "Testing OVES")
 |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
 |> filter(fn: (r) => r["_measurement"] == "airSensors")
