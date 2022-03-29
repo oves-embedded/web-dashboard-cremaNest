@@ -1,115 +1,120 @@
 import React from 'react';
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  Legend,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts';
+import {ResponsiveBar} from '@nivo/bar';
 import AppCard from '@crema/core/AppCard';
-
-/**
- * This file the Areachart Graph using rechart.
- * It represents metrics of the 7 months.
- */
-
-// import Data from db.json and render on the chart
-
-const data = [
-  {
-    name: 'Jan',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Feb',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Mar',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Apr',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'May',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Jun',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Jul',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+import dtaData from '../data';
 
 const AccountGraph = () => {
   return (
     <AppCard
       title='Sales Today'
-      sxStyle={{height: 1}}
+      sxStyle={{eight: 1}}
       contentStyle={{display: 'flex', flexDirection: 'column'}}
     >
-      <ResponsiveContainer width='100%' height={250}>
-        <AreaChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
+      <div style={{height: 300, width: 500}}>
+        <ResponsiveBar
+          data={dtaData}
+          keys={['hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut']}
+          indexBy='country'
+          margin={{top: 50, right: 130, bottom: 50, left: 60}}
+          padding={0.3}
+          valueScale={{type: 'linear'}}
+          indexScale={{type: 'band', round: true}}
+          colors={{scheme: 'nivo'}}
+          defs={[
+            {
+              id: 'dots',
+              type: 'patternDots',
+              background: 'inherit',
+              color: '#38bcb2',
+              size: 4,
+              padding: 1,
+              stagger: true,
+            },
+            {
+              id: 'lines',
+              type: 'patternLines',
+              background: 'inherit',
+              color: '#eed312',
+              rotation: -45,
+              lineWidth: 6,
+              spacing: 10,
+            },
+          ]}
+          fill={[
+            {
+              match: {
+                id: 'fries',
+              },
+              id: 'dots',
+            },
+            {
+              match: {
+                id: 'sandwich',
+              },
+              id: 'lines',
+            },
+          ]}
+          borderColor={{
+            from: 'color',
+            modifiers: [['darker', 1.6]],
           }}
-        >
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' />
-          <YAxis />
-          <Tooltip labelStyle={{color: 'black'}} />
-          <Legend />
-          <Area
-            type='monotone'
-            dataKey='uv'
-            stackId='1'
-            stroke='#8884d8'
-            fill='#8884d8'
-          />
-          <Area
-            type='monotone'
-            dataKey='pv'
-            stackId='1'
-            stroke='#82ca9d'
-            fill='#82ca9d'
-          />
-          <Area
-            type='monotone'
-            dataKey='amt'
-            stackId='1'
-            stroke='#4299E1'
-            fill='#4299E1'
-          />
-        </AreaChart>
-      </ResponsiveContainer>
+          axisTop={null}
+          axisRight={null}
+          axisBottom={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: 0,
+            legend: 'country',
+            legendPosition: 'middle',
+            legendOffset: 32,
+          }}
+          axisLeft={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: 0,
+            legend: 'food',
+            legendPosition: 'middle',
+            legendOffset: -40,
+          }}
+          labelSkipWidth={12}
+          labelSkipHeight={12}
+          labelTextColor={{
+            from: 'color',
+            modifiers: [['darker', 1.6]],
+          }}
+          legends={[
+            {
+              dataFrom: 'keys',
+              anchor: 'bottom-right',
+              direction: 'column',
+              justify: false,
+              translateX: 120,
+              translateY: 0,
+              itemsSpacing: 2,
+              itemWidth: 100,
+              itemHeight: 20,
+              itemDirection: 'left-to-right',
+              itemOpacity: 0.85,
+              symbolSize: 20,
+              effects: [
+                {
+                  on: 'hover',
+                  style: {
+                    itemOpacity: 1,
+                  },
+                },
+              ],
+            },
+          ]}
+          role='application'
+          ariaLabel='Nivo bar chart demo'
+          barAriaLabel={function (e) {
+            return (
+              e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue
+            );
+          }}
+        />
+      </div>
     </AppCard>
   );
 };
